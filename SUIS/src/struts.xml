@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="SUIS" namespace="/" extends="struts-default">
+<!--  
+        <default-action-ref name="index" />
+
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+-->
+        <action name="index">
+            <result>
+            /index.jsp
+            </result>
+        </action>
+		
+        <action name="Login" class="com.DisTec.SUIS.Action.LoginAction">
+        <result>result.jsp</result>
+        <result name="error">
+        error.jsp
+        </result>
+        </action>
+		<action name="Showall" class="com.DisTec.SUIS.Action.ShowAllAction">
+        <result>showall.jsp</result>
+        </action>
+        <action name="Add" class="com.DisTec.SUIS.Action.AddAction">
+        <result>result.jsp</result>
+        </action>
+    </package>
+
+
+    <!-- Add packages here -->
+
+</struts>
